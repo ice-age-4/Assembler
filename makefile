@@ -8,7 +8,7 @@ CFLAGS = -Wall -ansi -pedantic
 INCLUDES = -Iinclude
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
-TARGET = assembler
+TARGET = bin/assembler
 
 # Detect OS type
 ifeq ($(OS),Windows_NT)
@@ -40,6 +40,10 @@ run: $(TARGET)
 clean:
 ifeq ($(OS),Windows_NT)
 	-$(RM) obj\*.o 2>nul || true
+	-$(RM) tests\*.am 2>nul || true
+	-$(RM) tests\*.ent 2>nul || true
+	-$(RM) tests\*.ext 2>nul || true
+	-$(RM) tests\*.ob 2>nul || true
 	-$(RM) $(call FIXPATH,$(TARGET)).exe 2>nul || true
 else
 	-$(RM) obj/*.o $(TARGET)
