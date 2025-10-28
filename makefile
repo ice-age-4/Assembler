@@ -8,7 +8,7 @@ CFLAGS = -Wall -ansi -pedantic
 INCLUDES = -Iinclude
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
-TARGET = bin/assembler
+TARGET = assembler
 
 # Detect OS type
 ifeq ($(OS),Windows_NT)
