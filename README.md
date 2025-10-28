@@ -30,7 +30,7 @@ This project was developed as part of the "Lab in Systems Programming" course at
 ### Prerequisites
 
 - C compiler (e.g., GCC)
-- Make utility (optional, for building)
+- Make utility
 
 ### Installation
 
@@ -48,8 +48,6 @@ cd Assembler
 
 3. Build the project:
 
-**Using Makefile (recommended):**
-
 - On Linux / WSL:
 
 ```bash
@@ -64,11 +62,6 @@ mingw32-make
 
 This will compile the assembler and create the executable `assembler`.
 
-**Alternatively, compile manually:**
-
-```bash
-gcc -o assembler main.c Assembler.c Data.c Errors.c Files.c Labels.c LineParsing.c LinkedList.c Macros.c Operations.c Table.c
-```
 
 ### Usage
 
