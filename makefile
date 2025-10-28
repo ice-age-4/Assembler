@@ -1,43 +1,46 @@
-all: assembler
+# =============================
+# Cross-platform Makefile
+# Works on Linux, macOS, and Windows (MinGW / PowerShell / CMD)
+# =============================
 
-assembler: main.o Assembler.o Data.o Errors.o Files.o Labels.o LineParsing.o LinkedList.o Macros.o Operations.o Table.o utils.o
-	gcc -ansi -Wall -pedantic -o assembler main.o Assembler.o Data.o Errors.o Files.o Labels.o LineParsing.o LinkedList.o Macros.o Operations.o Table.o utils.o
+CC = gcc
+CFLAGS = -Wall -ansi -pedantic
+INCLUDES = -Iinclude
+SRC = $(wildcard src/*.c)
+OBJ = $(SRC:src/%.c=obj/%.o)
+TARGET = assembler
 
-main.o: main.c
-	gcc -ansi -Wall -pedantic -c main.c
+# Detect OS type
+ifeq ($(OS),Windows_NT)
+	RM = del /q
+	MKDIR = if not exist obj mkdir obj
+	FIXPATH = $(subst /,\\,$1)
+else
+	RM = rm -f
+	MKDIR = mkdir -p obj
+	FIXPATH = $1
+endif
 
-Assembler.o: Assembler.c Assembler.h
-	gcc -ansi -Wall -pedantic -c Assembler.c
+# =============================
+# Rules
+# =============================
 
-Data.o: Data.c Data.h
-	gcc -ansi -Wall -pedantic -c Data.c
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(TARGET) $(OBJ)
 
-Errors.o: Errors.c Errors.h
-	gcc -ansi -Wall -pedantic -c Errors.c
+obj/%.o: src/%.c
+	$(MKDIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-Files.o: Files.c Files.h
-	gcc -ansi -Wall -pedantic -c Files.c
+.PHONY: clean run
 
-Labels.o: Labels.c Labels.h
-	gcc -ansi -Wall -pedantic -c Labels.c
-
-LineParsing.o: LineParsing.c LineParsing.h
-	gcc -ansi -Wall -pedantic -c LineParsing.c
-
-LinkedList.o: LinkedList.c LinkedList.h
-	gcc -ansi -Wall -pedantic -c LinkedList.c
-
-Macros.o: Macros.c Macros.h
-	gcc -ansi -Wall -pedantic -c Macros.c
-
-Operations.o: Operations.c Operations.h
-	gcc -ansi -Wall -pedantic -c Operations.c
-
-Table.o: Table.c Table.h
-	gcc -ansi -Wall -pedantic -c Table.c
-
-utils.o: utils.c utils.h
-	gcc -ansi -Wall -pedantic -c utils.c
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-	rm *.o
+ifeq ($(OS),Windows_NT)
+	-$(RM) obj\*.o 2>nul || true
+	-$(RM) $(call FIXPATH,$(TARGET)).exe 2>nul || true
+else
+	-$(RM) obj/*.o $(TARGET)
+endif
