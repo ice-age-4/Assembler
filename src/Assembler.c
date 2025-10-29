@@ -381,6 +381,10 @@ int secondPass(FILE **amFile, FILE **obFile, FILE **entFile, FILE **extFile, Tab
 	}
 
 	/* second pass finished successfully! */
+
+
+	printf("Assembly of file '%s.as' completed successfully. Check output files for results.\n", globalCurrentFile);
+	
 	return NO_ERROR;
 }
 
