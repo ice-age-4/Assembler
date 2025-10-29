@@ -6,7 +6,7 @@ This project is a three-pass assembler written in C, designed to convert assembl
 
 - [📌 Project Overview](#-project-overview)  
 - [🚀 Features](#-features)
-- [🛠️ Getting Started](#getting-started)
+- [🛠️ Getting Started](https://github.com/ice-age-4/Assembler/edit/main/README.md#%EF%B8%8F-getting-started)
 - [🧩 Example Runs](#-example-runs)
 - [📁 Project Structure](#-project-structure)
 
