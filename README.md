@@ -68,7 +68,7 @@ This will compile the assembler and create the executable `assembler`.
 To assemble an assembly file:
 
 ```bash
-./assembler <source_file>
+./assembler <source_file_1> <source_file_2> ... <source_file_n>
 ```
 
 This will generate the corresponding `.am`, `.ob`, `.ent`, and `.ext` files.

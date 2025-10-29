@@ -247,7 +247,7 @@ int parseLinePreAssembler(char *line, FILE *amFile, Table *macroTable, Macro **l
 			}
 			else {
 				fputs(line, amFile);
-				if (line == '\0' || line[strlen(line) - 1] != '\n') {
+				if (*line == '\0' || line[strlen(line) - 1] != '\n') {
 					fputc('\n', amFile);
 				}
 			}

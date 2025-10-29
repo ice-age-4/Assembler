@@ -76,7 +76,7 @@ int compareMacro(void *macro, void *name) {
 void fprintLine(FILE *file, void *line) {
 	char *l = (char *) line;
 	fputs(l, file);
-	if (l == '\0' || l[strlen(l) - 1] != '\n') {
+	if (*l == '\0' || l[strlen(l) - 1] != '\n') {
 		fputc('\n', file);
 	}
 }
