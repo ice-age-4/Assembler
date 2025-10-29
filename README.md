@@ -2,11 +2,19 @@
 
 This project is a three-pass assembler written in C, designed to convert assembly language source files into machine code for an imaginary 24-bit CPU with 21-bit memory.
 
+## Table of Contents
+
+- [📌 Project Overview](#-project-overview)  
+- [🚀 Features](#-features)
+- [🛠️ Getting Started](#getting-started)
+- [🧩 Example Runs](#-example-runs)
+- [📁 Project Structure](#-project-structure)
+
 ## 📌 Project Overview
 
 The assembler processes assembly (.as) files in three main stages:
 
-1. **Pre-Assembler**: Handles **macro definitions and expansions** and Outputs an intermediate file (`.am`) containing expanded assembly code with no macro definitions remaining.
+1. **Pre-Assembler**: **Expands macros** and outputs an intermediate file (.am) without any remaining macro definitions.
 1. **First Pass**: Scans the expanded source code to **build a symbol table**, identifying labels and variables.
 2. **Second Pass**: **Generates the machine code**, resolving addresses using the symbol table.
 
@@ -30,8 +38,8 @@ This project was developed as part of the "Lab in Systems Programming" course at
 
 ### Prerequisites
 
-- C compiler (e.g., GCC)
-- Make utility
+- ℹ️ C compiler (e.g., GCC)
+- ℹ️ Make utility
 
 ### Installation
 
