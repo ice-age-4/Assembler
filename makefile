@@ -4,7 +4,7 @@
 # =============================
 
 CC = gcc
-CFLAGS = -Wall -ansi -pedantic
+CFLAGS = -Wall -Wextra -Werror -ansi -pedantic
 INCLUDES = -Iinclude
 SRC = $(wildcard src/*.c)
 OBJ = $(SRC:src/%.c=obj/%.o)
