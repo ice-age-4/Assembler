@@ -8,20 +8,26 @@
 /**
  * Represents error status when exiting functions.
  */
-#define NO_ERROR (-2)			/** no error occurred */
-#define INPUT_ERROR (-3)		/** An input error was detected. */
-#define SYSTEM_ERROR (-4)		/** An internal system error has occurred. */
+typedef enum StatusCode {
+    NO_ERROR = -2,		    	/** no error occurred */
+    INPUT_ERROR = -3,	       	/** An input error was detected. */
+    SYSTEM_ERROR = -4,		    /** An internal system error has occurred. */
+    PRE_PROCESSOR_ERROR = -5,	/** An input error was detected during the pre-processing stage. */
+    COMPILATION_ERROR = -6,		/** An input error was detected during the compilation stage. */
+    FILE_NAME_TOO_LONG_ERROR = -7	/** The file name provided is too long to be processed. */
+} StatusCode;
+
 
 /**
- * macros that represent logical values
+ * Macros that represent custom logical values.
+ * Note: These are negative to avoid overlap with array indices, 
+ * always compare explicitly (e.g., status == TRUE).
  */
 #define FALSE (-10)
 #define TRUE (-11)
 
-
 /**
- * A constant value that can be returned by a search function in an array.
- * This value is always outside the bounds of the array.
+ * A constant value returned by search functions when an item is not found.
  */
 #define NOT_FOUND (-1)
 

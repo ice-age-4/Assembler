@@ -31,7 +31,7 @@ int assemble(char * fileName) {
 
 	/* validate the limit on maximum file length */
 	if (validateFileNameLength(fileName) == INPUT_ERROR) {
-		return INPUT_ERROR;		/* file name is too long */
+		return FILE_NAME_TOO_LONG_ERROR;		/* file name is too long */
 	}
 
 
@@ -40,12 +40,17 @@ int assemble(char * fileName) {
 	/* Run the preAssembler with access to all the tables and files that it processes */
 	status = preAssembler(&asFile, &amFile, &macroTable);
 	if (status != NO_ERROR) {
-		/* if preAssembler returned error, need to remove file with suffix ".am" */
-		removeFile(fileName, ".am");
 		freeAllMemory(&macroTable, &labelTable, &dataTable, &operationTable);
 		if (closeAllFiles(asFile, amFile, obFile, entFile, extFile) == SYSTEM_ERROR)
 			return SYSTEM_ERROR;
-		return status;
+		/* if preAssembler returned error, need to remove file with suffix ".am" after closing it */
+		if (removeFile(fileName, ".am") == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+
+		if (status == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+		/* else, status == INPUT_ERROR */
+		return PRE_PROCESSOR_ERROR;
 	}
 
 	/* pre assembler finished successfully. -> continue to first pass */
@@ -61,7 +66,11 @@ int assemble(char * fileName) {
 		freeAllMemory(&macroTable, &labelTable, &dataTable, &operationTable);
 		if (closeAllFiles(asFile, amFile, obFile, entFile, extFile) == SYSTEM_ERROR)
 			return SYSTEM_ERROR;
-		return status;
+		
+		if (status == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+		/* else, status == INPUT_ERROR */
+		return COMPILATION_ERROR;
 	}
 
 	/* first pass finished successfully. -> free macro table and continue to second pass */
@@ -73,14 +82,21 @@ int assemble(char * fileName) {
 	/* Run the second pass with access to all the tables and files that it processes */
 	status = secondPass(&amFile, &obFile, &entFile, &extFile, &labelTable, &dataTable, &operationTable);
 	if (status != NO_ERROR) {
-		/* if secondPass returned error, need to remove all secondPass output files. */
-		removeFile(fileName, ".ob");
-		removeFile(fileName, ".ent");
-		removeFile(fileName, ".ext");
 		freeAllMemory(&macroTable, &labelTable, &dataTable, &operationTable);
 		if (closeAllFiles(asFile, amFile, obFile, entFile, extFile) == SYSTEM_ERROR)
 			return SYSTEM_ERROR;
-		return status;
+		/* if secondPass returned error, need to remove all secondPass output files. */
+		if (removeFile(fileName, ".ob") == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+		if (removeFile(fileName, ".ent") == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+		if (removeFile(fileName, ".ext") == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+
+		if (status == SYSTEM_ERROR)
+			return SYSTEM_ERROR;
+		/* else, status == INPUT_ERROR */
+		return COMPILATION_ERROR;
 	}
 
 
@@ -381,9 +397,6 @@ int secondPass(FILE **amFile, FILE **obFile, FILE **entFile, FILE **extFile, Tab
 	}
 
 	/* second pass finished successfully! */
-
-
-	printf("Assembly of file '%s.as' completed successfully. Check output files for results.\n", globalCurrentFile);
 	
 	return NO_ERROR;
 }

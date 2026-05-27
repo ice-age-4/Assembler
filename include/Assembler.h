@@ -16,7 +16,9 @@
  * Runs the three stages of the assembler on a single file, and monitors the error status.
  * @param fileName A string that represents the name of the file on which the assembler should be run
  * @return On success, NO_ERROR.
- * On an error related to the contents of the input file, INPUT_ERROR.
+ * On an error of file name length, FILE_NAME_TOO_LONG_ERROR.
+ * On an error while the pre-assembler stage, PRE_PROCESSOR_ERROR.
+ * On an error while the compilation stage, COMPILATION_ERROR.
  * On an error related to system operation, SYSTEM_ERROR
  */
 int assemble(char * fileName);

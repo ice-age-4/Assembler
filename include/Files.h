@@ -37,8 +37,9 @@ FILE *openFile(const char *fileName, const char *suffix, const char *mode);
  * deletes a file from the file system.
  * @param fileName The base name of file requested to be deleted
  * @param suffix Extension in the format ".suffix" of the file requested to be deleted
+ * @return NO_ERROR if file was deleted successfully, otherwise SYSTEM_ERROR.
  */
-void removeFile(const char *fileName, const char *suffix);
+int removeFile(const char *fileName, const char *suffix);
 
 
 /**

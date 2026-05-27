@@ -1,6 +1,7 @@
 #include "Files.h"
 
 #include <string.h>
+#include <errno.h>
 
 #include "Errors.h"
 #include "globals.h"
@@ -33,13 +34,21 @@ FILE * openFile(const char *fileName, const char *suffix, const char *mode) {
 
 
 
-void removeFile(const char *fileName, const char *suffix) {
+int removeFile(const char *fileName, const char *suffix) {
 	/* create new string with full file name to protect the original strings */
 	char nameWithSuffix[MAX_FILE_NAME_LENGTH];
 	strcpy(nameWithSuffix, fileName);
 	strcat(nameWithSuffix, suffix);
 
-	remove(nameWithSuffix);
+	if (remove(nameWithSuffix) != 0) {
+		if (errno == ENOENT) {
+			/* file doesn't exist, so it's already "removed". not an error. */
+			return NO_ERROR;
+		}
+		reportSystemError(ERROR_DELETE_FILE);
+		return SYSTEM_ERROR;
+	}
+	return NO_ERROR;
 }
 
 
@@ -63,7 +72,7 @@ int readLineFromFile(FILE *fp, char *line) {
 int validateLineLength(const char *line, FILE *file) {
 	if (strrchr(line, '\n') == NULL) {
 		if (feof(file) == 0) {
-			reportInputError(TOO_LONG_LINE, globalCurrentFile, globalCurrentLine);
+			reportInputError(ERROR_TOO_LONG_LINE, globalCurrentFile, globalCurrentLine);
 			return INPUT_ERROR;
 		}
 	}

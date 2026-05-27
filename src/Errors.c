@@ -4,18 +4,17 @@
 
 
 Error errors[] = {
-	{NO_ERROR, ""},
-	{ERROR_NO_INPUT, "at least 1 file name is required"},
 	{ERROR_TOO_LONG_FILE_NAME, "too long file name"},
 	{ERROR_CREATE_FILE, "failed to create file"},
 	{ERROR_OPEN_FILE, "failed to open file, please check file name."},
 	{ERROR_CLOSING_FILE, "failed to close file"},
+	{ERROR_DELETE_FILE, "failed to delete file"},
 	{ERROR_READ_LINE_FROM_FILE, "failed to read from file"},
 	{ERROR_MEMORY_ALLOCATION,"failed to allocate memory"},
 	{ERROR_WRITE_TO_FILE, "failed to write to file"},
 	{ERROR_USING_FILE, "error while using file"},
 	{ERROR_REACHED_MEMORY_LIMIT, "memory is full"},
-	{TOO_LONG_LINE, "line is too long"},
+	{ERROR_TOO_LONG_LINE, "line is too long"},
 	{ERROR_EXPECTED_LABEL_NAME_BEFORE_COLON, "before ':' expected label name"},
 	{ERROR_EXPECTED_WHITE_CHAR_AFTER_COLON, "after ':' expected white character"},
 	{ERROR_ONLY_LABEL_DEF, "after label definition expected a sentence"},
