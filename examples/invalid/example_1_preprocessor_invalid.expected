@@ -1,0 +1,18 @@
+Assembling file: examples/invalid\example_1_preprocessor_invalid.as...
+
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 1: line is too long
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 3: extra text after macro definition
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 6: extra text after macro end
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 7: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 9: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 11: macro name syntax is invalid
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 13: macro name is too long
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 15: A macro with similar name already exists
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 17: extra text after macro call
+
+=> Failed: Pre-processing error encountered while processing 'examples/invalid\example_1_preprocessor_invalid'. No output files were generated.
+
+--------------------------------------------------
+
+Done. All files processed.
+

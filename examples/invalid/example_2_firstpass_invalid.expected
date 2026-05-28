@@ -1,0 +1,38 @@
+Assembling file: examples/invalid\example_2_firstpass_invalid.as...
+
+Input error in file examples/invalid\example_2_firstpass_invalid, line 1: unrecognized operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 2: number enterd is out of range. expected: signed 24-bits.
+Input error in file examples/invalid\example_2_firstpass_invalid, line 3: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 4: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 5: after ':' expected white character
+Input error in file examples/invalid\example_2_firstpass_invalid, line 6: before ':' expected label name
+Input error in file examples/invalid\example_2_firstpass_invalid, line 7: after ':' expected white character
+Input error in file examples/invalid\example_2_firstpass_invalid, line 8: after .extern expected extern label name
+Input error in file examples/invalid\example_2_firstpass_invalid, line 9: A macro with similar name already exists
+Input error in file examples/invalid\example_2_firstpass_invalid, line 10: number enterd is out of range. expected: signed 21-bits.
+Input error in file examples/invalid\example_2_firstpass_invalid, line 11: invalid addressing method of source operand for this operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 12: invalid addressing method of destination operand for this operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 14: label name is too long
+Input error in file examples/invalid\example_2_firstpass_invalid, line 15: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 16: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_2_firstpass_invalid, line 18: the operation in this line requires no operands
+Input error in file examples/invalid\example_2_firstpass_invalid, line 19: operand is missing
+Input error in file examples/invalid\example_2_firstpass_invalid, line 20: operand is missing
+Input error in file examples/invalid\example_2_firstpass_invalid, line 21: A label with similar name already exists
+Input error in file examples/invalid\example_2_firstpass_invalid, line 25: comma is expected between 2 operands
+Input error in file examples/invalid\example_2_firstpass_invalid, line 26: missing number right after '#'
+Input error in file examples/invalid\example_2_firstpass_invalid, line 27: empty directive is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 28: comma before first number is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 29: comma after last number is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 30: comma is expected between numbers
+Input error in file examples/invalid\example_2_firstpass_invalid, line 31: invalid number writing. expected: optional + or - and then digits
+Input error in file examples/invalid\example_2_firstpass_invalid, line 32: comma is expected between numbers
+Input error in file examples/invalid\example_2_firstpass_invalid, line 33: invalid string. expected: string between ""
+Input error in file examples/invalid\example_2_firstpass_invalid, line 34: unrecognized operation
+
+=> Failed: Compilation error encountered while processing 'examples/invalid\example_2_firstpass_invalid'. Only Preprocessor file (.am) was generated.
+
+--------------------------------------------------
+
+Done. All files processed.
+

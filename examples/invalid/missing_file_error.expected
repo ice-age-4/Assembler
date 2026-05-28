@@ -1,0 +1,10 @@
+Assembling file: examples/invalid/this_file_does_not_exist.as...
+
+Input error in file examples/invalid/this_file_does_not_exist, line 0: failed to open file, please check file name.
+
+=> Failed: Pre-processing error encountered while processing 'examples/invalid/this_file_does_not_exist'. No output files were generated.
+
+--------------------------------------------------
+
+Done. All files processed.
+

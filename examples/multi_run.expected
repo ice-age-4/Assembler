@@ -1,0 +1,77 @@
+Assembling file: examples/valid\example_4_valid.as...
+
+
+=> Success: 'examples/valid\example_4_valid' assembled successfully. Output files generated.
+
+--------------------------------------------------
+
+Assembling file: examples/invalid\example_1_preprocessor_invalid.as...
+
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 1: line is too long
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 3: extra text after macro definition
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 6: extra text after macro end
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 7: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 9: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 11: macro name syntax is invalid
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 13: macro name is too long
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 15: A macro with similar name already exists
+Input error in file examples/invalid\example_1_preprocessor_invalid, line 17: extra text after macro call
+
+=> Failed: Pre-processing error encountered while processing 'examples/invalid\example_1_preprocessor_invalid'. No output files were generated.
+
+--------------------------------------------------
+
+Assembling file: examples/invalid\example_2_firstpass_invalid.as...
+
+Input error in file examples/invalid\example_2_firstpass_invalid, line 1: unrecognized operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 2: number enterd is out of range. expected: signed 24-bits.
+Input error in file examples/invalid\example_2_firstpass_invalid, line 3: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 4: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 5: after ':' expected white character
+Input error in file examples/invalid\example_2_firstpass_invalid, line 6: before ':' expected label name
+Input error in file examples/invalid\example_2_firstpass_invalid, line 7: after ':' expected white character
+Input error in file examples/invalid\example_2_firstpass_invalid, line 8: after .extern expected extern label name
+Input error in file examples/invalid\example_2_firstpass_invalid, line 9: A macro with similar name already exists
+Input error in file examples/invalid\example_2_firstpass_invalid, line 10: number enterd is out of range. expected: signed 21-bits.
+Input error in file examples/invalid\example_2_firstpass_invalid, line 11: invalid addressing method of source operand for this operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 12: invalid addressing method of destination operand for this operation
+Input error in file examples/invalid\example_2_firstpass_invalid, line 14: label name is too long
+Input error in file examples/invalid\example_2_firstpass_invalid, line 15: label name syntax is invalid
+Input error in file examples/invalid\example_2_firstpass_invalid, line 16: Not allowed to use a reserved word of the assembly
+Input error in file examples/invalid\example_2_firstpass_invalid, line 18: the operation in this line requires no operands
+Input error in file examples/invalid\example_2_firstpass_invalid, line 19: operand is missing
+Input error in file examples/invalid\example_2_firstpass_invalid, line 20: operand is missing
+Input error in file examples/invalid\example_2_firstpass_invalid, line 21: A label with similar name already exists
+Input error in file examples/invalid\example_2_firstpass_invalid, line 25: comma is expected between 2 operands
+Input error in file examples/invalid\example_2_firstpass_invalid, line 26: missing number right after '#'
+Input error in file examples/invalid\example_2_firstpass_invalid, line 27: empty directive is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 28: comma before first number is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 29: comma after last number is forbidden
+Input error in file examples/invalid\example_2_firstpass_invalid, line 30: comma is expected between numbers
+Input error in file examples/invalid\example_2_firstpass_invalid, line 31: invalid number writing. expected: optional + or - and then digits
+Input error in file examples/invalid\example_2_firstpass_invalid, line 32: comma is expected between numbers
+Input error in file examples/invalid\example_2_firstpass_invalid, line 33: invalid string. expected: string between ""
+Input error in file examples/invalid\example_2_firstpass_invalid, line 34: unrecognized operation
+
+=> Failed: Compilation error encountered while processing 'examples/invalid\example_2_firstpass_invalid'. Only Preprocessor file (.am) was generated.
+
+--------------------------------------------------
+
+Assembling file: examples/invalid\example_3_secondpass_invalid.as...
+
+Input error in file examples/invalid\example_3_secondpass_invalid, line 3: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 6: invalid label type. in relative addressing method, local code label is required.
+Input error in file examples/invalid\example_3_secondpass_invalid, line 7: invalid label type. in relative addressing method, local code label is required.
+Input error in file examples/invalid\example_3_secondpass_invalid, line 8: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 9: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 10: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 11: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 4: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 5: unable to update extern label to entry
+
+=> Failed: Compilation error encountered while processing 'examples/invalid\example_3_secondpass_invalid'. Only Preprocessor file (.am) was generated.
+
+--------------------------------------------------
+
+Done. All files processed.
+

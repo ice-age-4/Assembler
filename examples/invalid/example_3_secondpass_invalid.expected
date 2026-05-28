@@ -1,0 +1,18 @@
+Assembling file: examples/invalid\example_3_secondpass_invalid.as...
+
+Input error in file examples/invalid\example_3_secondpass_invalid, line 3: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 6: invalid label type. in relative addressing method, local code label is required.
+Input error in file examples/invalid\example_3_secondpass_invalid, line 7: invalid label type. in relative addressing method, local code label is required.
+Input error in file examples/invalid\example_3_secondpass_invalid, line 8: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 9: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 10: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 11: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 4: label used as operand is not defined
+Input error in file examples/invalid\example_3_secondpass_invalid, line 5: unable to update extern label to entry
+
+=> Failed: Compilation error encountered while processing 'examples/invalid\example_3_secondpass_invalid'. Only Preprocessor file (.am) was generated.
+
+--------------------------------------------------
+
+Done. All files processed.
+

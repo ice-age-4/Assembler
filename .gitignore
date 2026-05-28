@@ -3,3 +3,11 @@
 *.o
 *.swp
 *.vscode/
+
+# output files from tests
+examples/**/*.am
+examples/**/*.ob
+examples/**/*.ext
+examples/**/*.ent
+
+examples/**/*.actual
